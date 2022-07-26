@@ -1,0 +1,438 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: shabnam;
+    
+}
+
+body {
+    background-color: rgb(243, 237, 237);
+
+}
+ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+//colors for table 
+
+$green-sauare : rgb(172, 211, 136);
+$blue-square : rgb(84, 189, 221);
+$orang-square : rgb(230, 185, 103);
+$purple-square : rgb(212, 138, 196);
+
+.row::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+@font-face {
+    font-family: 'shabnam';
+    src: url('../fonts/Shabnam-FD.eot') format('eot');
+    src: url('../fonts/Shabnam-FD.ttf') format('ttf');
+    src: url('../fonts/Shabnam-FD.woff') format('woff');
+}
+
+
+.icon-button {
+    display: inline-block;
+    background-color: transparent;
+}
+.green-square{
+    background-color: $green-sauare;
+}
+.blue-square{
+    background-color: $blue-square;
+}
+.orange-square{
+    background-color: $orang-square;
+}
+
+.purple-square{
+    background-color: $purple-square;
+}
+.calendar{
+    background-color: rgb(255, 255, 255);
+    width: 60vw;
+    padding: 10px 0;
+    margin: 100px 500px 0 100px;
+    border-radius: 15px;
+
+    .typeB{
+        display: none;
+    }
+
+    .top-of-container {
+        display: flex;
+        flex-direction: row;
+
+        .left-of-top {
+            width: 50%;
+
+            #print {
+                margin: 15px 0 0 10px;
+
+                &:before {
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 0.6em;
+                    font-weight: 700;
+                    content: "\f02f";
+
+                }
+            }
+
+            #remove-group {
+                display: block;
+                margin-left: 10px;
+                color: red;
+                direction: rtl;
+
+                &::after {
+                    content: "حذف گروهی";
+                    font-size: 0.6em;
+                    font-weight: 700;
+                    margin-right: 2px;
+                }
+
+                &:before {
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 0.6em;
+                    font-weight: 700;
+                    content: "\f1f8";
+                }
+            }
+
+        }
+
+        .right-of-top {
+            direction: rtl;
+            width: 50%;
+
+            #title {
+                direction: rtl;
+                font-size: 0.6em;
+                margin: 15px 10px 0 0;
+                font-weight: bold;
+            }
+
+            #shows-calendar {
+                margin-right: 10px;
+
+                &:before {
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 0.7em;
+                    font-weight: 700;
+                    content: " \f00a";
+                }
+
+                &:after {
+                    content: "نمایش تقویمی";
+                    font-size: 0.7em;
+                    font-weight: 700;
+                    letter-spacing: 0.4pt;
+                    margin-right: 2px;
+                }
+            }
+
+            #shows-list {
+                margin-right: 5px;
+                color: rgba(128, 128, 128, 0.644);
+
+                &:before {
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 0.5em;
+                    font-weight: 700;
+                    content: " \f00b";
+                }
+
+                &:after {
+                    content: "نمایش لیستی";
+                    font-size: 0.5em;
+                    font-weight: 700;
+                    letter-spacing: 0.4pt;
+                    margin-right: 2px;
+                }
+            }
+        }
+
+    }
+
+    .main-of-container {
+        #calendar-table {
+            direction: rtl;
+            width: 95%;
+            margin: auto;
+            border-radius: 4px;
+            border: 1px solid rgb(180, 178, 178);
+            font-size: 0.5em;
+            border-spacing: 0;
+            margin: 15px auto;
+            overflow: hidden;
+        }
+
+        thead {
+            tr {
+                th{
+                    padding: 10px 10px;
+                }
+                :last-child {
+                    border-left: none;
+                    
+                }
+            }
+        }
+
+        .square-style{
+                width: 70px;
+                margin: 10px auto;
+                padding: 5px;
+                border-radius: 3px;
+                position: relative;
+                text-align: center;
+        }
+
+        .subject{
+            font-size: 1em;
+            font-weight: bold;
+            
+        }
+
+        .teacher{
+            font-size: 0.5em;
+        }
+
+        .time{
+            font-size: 0.5em;
+        }
+
+        .remove-btn {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            line-height: 5px;
+            position: absolute;
+            top: -2px;
+            right:-2px;
+            
+            &:before {
+                font-family: "Font Awesome 5 Free";
+                font-size: 8px;
+                font-weight: 700;
+                content: "\f00d";
+            }
+        }
+        tbody {
+            tr {
+                :last-child {
+                    border-left: none;
+                }
+
+                td {
+                    border-bottom: none;
+                }
+
+               
+            }
+        }
+
+        td,
+        th {
+            border-left: 1px solid rgb(145, 142, 142);
+            border-bottom: 1px solid rgb(134, 134, 134);
+            vertical-align: top;
+
+            &:nth-child(even) {
+                background-color: rgba(204, 204, 204, 0.363);
+            }
+
+
+        }
+    }
+}
+.list{
+    background-color: rgb(255, 255, 255);
+    width: 60vw;
+    padding: 10px 0;
+    margin: 100px 500px 0 100px;
+    border-radius: 15px;
+    
+    
+    .top-of-container {
+        display: flex;
+        flex-direction: row;
+
+        .left-of-top {
+            width: 50%;
+
+            #print {
+                display: none;
+            }
+
+            #remove-group {
+                display: none;
+            }
+
+        }
+
+        .right-of-top {
+            direction: rtl;
+            width: 50%;
+
+            #title {
+                direction: rtl;
+                font-size: 0.6em;
+                margin: 15px 10px 0 0;
+                font-weight: bold;
+            }
+
+            #shows-calendar {
+                margin-right: 10px;
+                color: rgba(128, 128, 128, 0.644);
+
+                &:before {
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 0.5em;
+                    font-weight: 700;
+                    content: " \f00a";
+                }
+
+                &:after {
+                    content: "نمایش تقویمی";
+                    font-size: 0.5em;
+                    font-weight: 700;
+                    letter-spacing: 0.4pt;
+                    margin-right: 2px;
+                }
+            }
+
+            #shows-list {
+                margin-right: 5px;
+
+                &:before {
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 0.7em;
+                    font-weight: 700;
+                    content: " \f00b";
+                }
+
+                &:after {
+                    content: "نمایش لیستی";
+                    font-size: 0.7em;
+                    font-weight: 700;
+                    letter-spacing: 0.4pt;
+                    margin-right: 2px;
+                }
+            }
+        }
+
+    }
+
+    .main-of-container{
+        #calendar-table{
+            display: none;
+        }
+        ul{
+            direction: rtl;
+            padding: 8px;
+            .onDay{
+                width: 10%;
+                font-size: 0.6em;
+                background-color: rgba(209, 201, 201, 0.349);
+                text-align: center;
+                border-radius: 8px;
+                margin-bottom: 5px;
+                &:before{
+                    margin-left: 3px;
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 0.6em;
+                    font-weight: 700;
+                    content:"\f07b";
+                }
+            }
+            .row-style{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                font-size: 0.3em;
+                line-height: 20px;
+                padding: 5px 10px;
+                margin-bottom: 5px;
+                border-radius: 15px;
+                .subject{
+                    width: 25%;
+                    height: 100%;
+                    font-weight: bold;
+                    &:before{
+                        margin-left: 3px;
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 0.4em;
+                        font-weight: 700;
+                        content: "\f02d";
+                    }
+                }
+                .teacher{
+                    width: 25%;
+                    height: 100%;
+                }
+                .time{
+                    direction: ltr;
+                    width: 25%;
+                    height: 100%;
+                    flex-grow: 2;
+                    &:after{
+                        margin-left: 2px;
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 0.4em;
+                        font-weight: 700;
+                        content: "\f017";
+                    }
+                }
+
+                .remove-btn{
+                    width: 1.2em;
+                    height:1.2em;
+                    margin: 2px;
+                    border-radius: 50%;
+                    position: relative;
+                    &:before{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 0.4em;
+                        font-weight: 700;
+                        content: "\f1f8";
+                    }
+                }
+                .edit{
+                    width: 1.2em;
+                    height: 1.2em;
+                    margin: 2px;
+                    border-radius: 50%;
+                    position: relative;
+                    &:before{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 0.4em;
+                        font-weight: 700;
+                        content: "\f303";
+                    }
+                }
+            }
+        }
+    }
+}
