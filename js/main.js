@@ -45,22 +45,21 @@ removeBtns.forEach((element) => {
 // functions
 function changeToListStyle(day) {
   let childArray = day.children;
-  for (let i = 1; i <= childArray.length; i++) { 
-    childArray[i].classList.remove("square-style");
-    childArray[i].classList.add("row-style");
+  for (const li of childArray) { 
+    li.classList.add("row-style");
+    childArray[0].classList.remove("row-style");
   }
-  day.childNodes = childArray;
-  day.classList.add("typeB");
+  // day.classList.add("typeB");
 }
 
 function changeTocCalendarStyle() {
   let ul = document.querySelectorAll('ul');
   ul.forEach(element => {
-    element.classList.remove('typeB');
     let li = element.children
-    for (let i = 1; i <= li.length; i++) {
-      li[i].classList.remove('row-style');
-      li[i].classList.add('square-style');
+    for (const item of li) {
+      item.classList.remove('row-style');
+      item.classList.add('square-style');
+      li[0].classList.remove("square-style");
     }
   });
   

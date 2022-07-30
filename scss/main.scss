@@ -73,10 +73,6 @@ $purple-square : rgb(212, 138, 196);
     margin: 100px 500px 0 100px;
     border-radius: 15px;
 
-    .typeB {
-        display: none;
-    }
-
     .top-of-container {
         display: flex;
         flex-direction: row;
@@ -331,24 +327,28 @@ $purple-square : rgb(212, 138, 196);
         }
 
     }
-
+    
     .main-of-container {
         display: flex;
         flex-direction: column;
 
         ul {
+            font-size: 0.6em;
             display: block;
+            // display: flex;
+            // align-items: flex-start;
             border: none;
             direction: rtl;
             padding: 8px;
 
             .daycounter {
-                width: 10%;
-                font-size: 0.6em;
-                background-color: rgba(209, 201, 201, 0.349);
+                width: 13%;
                 text-align: center;
-                border-radius: 8px;
-                margin-bottom: 5px;
+                border-radius: 15px;
+                line-height: 30px;
+                margin: 5px 0;
+                background-color: rgba(209, 201, 201, 0.349);
+                border: none;
 
                 &:before {
                     margin-left: 3px;
@@ -358,20 +358,20 @@ $purple-square : rgb(212, 138, 196);
                     content: "\f07b";
                 }
 
-                &::after {
-                    display: none;
-                }
             }
 
-            .row-style {
+            .square-style {
                 width: 100%;
                 display: flex;
                 flex-direction: row;
+                // align-items: baseline;
                 font-size: 0.3em;
                 line-height: 20px;
                 padding: 5px 10px;
-                margin-bottom: 5px;
+                margin: 0 auto 5px auto;
                 border-radius: 15px;
+                position: relative;
+                text-align: right;
 
                 .subject {
                     width: 25%;
@@ -388,6 +388,7 @@ $purple-square : rgb(212, 138, 196);
                 }
 
                 .teacher {
+                    font-size: 0.5em;
                     width: 25%;
                     height: 100%;
                 }
@@ -413,6 +414,9 @@ $purple-square : rgb(212, 138, 196);
                     margin: 2px;
                     border-radius: 50%;
                     position: relative;
+                    line-height: 0;
+                    right: 0;
+                    top: 0;
 
                     &:before {
                         position: absolute;
@@ -446,7 +450,10 @@ $purple-square : rgb(212, 138, 196);
                 }
             }
         }
+
     }
+
+    
 }
 
 @media only screen and (max-width : 800px) {
@@ -456,10 +463,6 @@ $purple-square : rgb(212, 138, 196);
         padding: 10px 0;
         margin: 100px 500px 0 100px;
         border-radius: 15px;
-
-        .typeB {
-            display: none;
-        }
 
         .top-of-container {
             display: flex;
@@ -646,13 +649,7 @@ $purple-square : rgb(212, 138, 196);
                 }
             }
 
-            :last-child {
-                border-top-left-radius: 6px;
-            }
-
-            :first-child {
-                border-top-right-radius: 6px;
-            }
         }
     }
 }
+
