@@ -5,20 +5,19 @@
     margin: 0;
     padding: 0;
     font-family: shabnam;
-
+    
 }
 
 body {
     background-color: rgb(243, 237, 237);
 
 }
-
 ul {
     list-style-type: none;
     width: 100%;
 }
 
-button {
+button{
     border: none;
     outline: none;
     cursor: pointer;
@@ -49,31 +48,27 @@ $purple-square : rgb(212, 138, 196);
     display: inline-block;
     background-color: transparent;
 }
-
-.green-square {
+.green-square{
     background-color: $green-sauare;
 }
-
-.blue-square {
+.blue-square{
     background-color: $blue-square;
 }
-
-.orange-square {
+.orange-square{
     background-color: $orang-square;
 }
 
-.purple-square {
+.purple-square{
     background-color: $purple-square;
 }
-
-.calendar {
+.calendar{
     background-color: rgb(255, 255, 255);
     width: 60vw;
     padding: 10px 0;
     margin: 100px 500px 0 100px;
     border-radius: 15px;
 
-    .typeB {
+    .typeB{
         display: none;
     }
 
@@ -173,95 +168,105 @@ $purple-square : rgb(212, 138, 196);
     }
 
     .main-of-container {
-        margin: auto;
-        width: 95%;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        
-        ul {
-            font-size: 0.6em;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid black;
-            
-            .daycounter {
-                flex-basis: 30px;
-                line-height: 30px;
-                width: 100%;
-                height: 10%;
-                text-align: center;
-                font-size: 1em;
-                border-radius: 0;
-                border-bottom: 1px solid black;
-                // background-color: red;
-                margin: 0;
+        #calendar-table {
+            direction: rtl;
+            width: 95%;
+            margin: auto;
+            border-radius: 4px;
+            border: 1px solid rgb(180, 178, 178);
+            font-size: 0.5em;
+            border-spacing: 0;
+            margin: 15px auto;
+            overflow: hidden;
+        }
+
+        thead {
+            tr {
+                th{
+                    padding: 10px 10px;
+                }
+                :last-child {
+                    border-left: none;
+                    
+                }
             }
-            
-            .square-style {
-                width: 70%;
+        }
+
+        .square-style{
+                width: 70px;
                 margin: 10px auto;
                 padding: 5px;
-                border-radius: 6px;
+                border-radius: 3px;
                 position: relative;
                 text-align: center;
-                
-                .subject {
-                    font-size: 1em;
-                    font-weight: bold;
+        }
 
-                }
-                
-                .teacher {
-                    font-size: 0.5em;
-                }
+        .subject{
+            font-size: 1em;
+            font-weight: bold;
+            
+        }
 
-                .time {
-                    font-size: 0.5em;
-                }
-                
-                .remove-btn {
-                    width: 12px;
-                    height: 12px;
-                    border-radius: 50%;
-                    line-height: 6px;
-                    position: absolute;
-                    top: -2px;
-                    right: -2px;
-                    
-                    &:before {
-                        font-family: "Font Awesome 5 Free";
-                        font-size: 8px;
-                        font-weight: 700;
-                        content: "\f00d";
-                    }
-                    
-                }
+        .teacher{
+            font-size: 0.5em;
+        }
+
+        .time{
+            font-size: 0.5em;
+        }
+
+        .remove-btn {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            line-height: 5px;
+            position: absolute;
+            top: -2px;
+            right:-2px;
+            
+            &:before {
+                font-family: "Font Awesome 5 Free";
+                font-size: 8px;
+                font-weight: 700;
+                content: "\f00d";
             }
         }
-        
-        
-        :last-child {
-            border-top-left-radius: 6px;
+        tbody {
+            tr {
+                :last-child {
+                    border-left: none;
+                }
+
+                td {
+                    border-bottom: none;
+                }
+
+               
+            }
         }
-        
-        :first-child {
-            border-top-right-radius: 6px;
+
+        td,
+        th {
+            border-left: 1px solid rgb(145, 142, 142);
+            border-bottom: 1px solid rgb(134, 134, 134);
+            vertical-align: top;
+
+            &:nth-child(even) {
+                background-color: rgba(204, 204, 204, 0.363);
+            }
+
+
         }
     }
 }
-
-
-.list {
-
+.list{
     background-color: rgb(255, 255, 255);
     width: 60vw;
     padding: 10px 0;
     margin: 100px 500px 0 100px;
     border-radius: 15px;
-
-
+    
+    
     .top-of-container {
         display: flex;
         flex-direction: row;
@@ -332,38 +337,34 @@ $purple-square : rgb(212, 138, 196);
 
     }
 
-    .main-of-container {
-        display: flex;
-        flex-direction: column;
-
-        ul {
-            display: block;
-            border: none;
+    .main-of-container{
+        #calendar-table{
+            display: none;
+        }
+        ul{
             direction: rtl;
             padding: 8px;
+<<<<<<< HEAD
 
             .daycounter {
-                width: 10%;
-                font-size: 0.6em;
-                background-color: rgba(209, 201, 201, 0.349);
+               
+                width: 13%;
                 text-align: center;
-                border-radius: 8px;
-                margin-bottom: 5px;
+                border-radius: 15px;
+                line-height: 30px;
+                margin: 5px 0;
+                background-color: rgba(209, 201, 201, 0.349);
+                border: none;
 
                 &:before {
                     margin-left: 3px;
                     font-family: "Font Awesome 5 Free";
                     font-size: 0.6em;
                     font-weight: 700;
-                    content: "\f07b";
-                }
-
-                &::after {
-                    display: none;
+                    content:"\f07b";
                 }
             }
-
-            .row-style {
+            .row-style{
                 width: 100%;
                 display: flex;
                 flex-direction: row;
@@ -372,13 +373,11 @@ $purple-square : rgb(212, 138, 196);
                 padding: 5px 10px;
                 margin-bottom: 5px;
                 border-radius: 15px;
-
-                .subject {
+                .subject{
                     width: 25%;
                     height: 100%;
                     font-weight: bold;
-
-                    &:before {
+                    &:before{
                         margin-left: 3px;
                         font-family: "Font Awesome 5 Free";
                         font-size: 0.4em;
@@ -386,19 +385,16 @@ $purple-square : rgb(212, 138, 196);
                         content: "\f02d";
                     }
                 }
-
-                .teacher {
+                .teacher{
                     width: 25%;
                     height: 100%;
                 }
-
-                .time {
+                .time{
                     direction: ltr;
                     width: 25%;
                     height: 100%;
                     flex-grow: 2;
-
-                    &:after {
+                    &:after{
                         margin-left: 2px;
                         font-family: "Font Awesome 5 Free";
                         font-size: 0.4em;
@@ -407,14 +403,13 @@ $purple-square : rgb(212, 138, 196);
                     }
                 }
 
-                .remove-btn {
+                .remove-btn{
                     width: 1.2em;
-                    height: 1.2em;
+                    height:1.2em;
                     margin: 2px;
                     border-radius: 50%;
                     position: relative;
-
-                    &:before {
+                    &:before{
                         position: absolute;
                         top: 50%;
                         left: 50%;
@@ -425,15 +420,13 @@ $purple-square : rgb(212, 138, 196);
                         content: "\f1f8";
                     }
                 }
-
-                .edit {
+                .edit{
                     width: 1.2em;
                     height: 1.2em;
                     margin: 2px;
                     border-radius: 50%;
                     position: relative;
-
-                    &:before {
+                    &:before{
                         position: absolute;
                         top: 50%;
                         left: 50%;
@@ -444,214 +437,6 @@ $purple-square : rgb(212, 138, 196);
                         content: "\f303";
                     }
                 }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width : 800px) {
-    .calendar {
-        background-color: rgb(255, 255, 255);
-        width: 60vw;
-        padding: 10px 0;
-        margin: 100px 500px 0 100px;
-        border-radius: 15px;
-
-        .typeB {
-            display: none;
-        }
-
-        .top-of-container {
-            display: flex;
-            flex-direction: row;
-
-            .left-of-top {
-                width: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-
-                #print {
-                    display: none;
-                }
-
-                #remove-group {
-                    display: block;
-                    margin-left: 10px;
-                    color: red;
-                    direction: rtl;
-
-                    &::after {
-                        content: "حذف گروهی";
-                        font-size: 0.6em;
-                        font-weight: 700;
-                        margin-right: 2px;
-                    }
-
-                    &:before {
-                        font-family: "Font Awesome 5 Free";
-                        font-size: 0.6em;
-                        font-weight: 700;
-                        content: "\f1f8";
-                    }
-                }
-
-            }
-
-            .right-of-top {
-                direction: rtl;
-                width: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-
-                #title {
-                    direction: rtl;
-                    font-size: 0.6em;
-                    margin: 15px 10px 10px 0;
-                    font-weight: bold;
-                }
-
-                #shows-calendar {
-                    display: none;
-                }
-
-                #shows-list {
-                    display: none;
-                }
-            }
-
-        }
-
-        .main-of-container {
-            display: flex;
-            flex-direction: column;
-
-            ul {
-                font-size: 0.6em;
-                display: block;
-                // display: flex;
-                // align-items: flex-start;
-                border: none;
-                direction: rtl;
-                padding: 8px;
-
-                .daycounter {
-                    width: 13%;
-                    text-align: center;
-                    border-radius: 15px;
-                    line-height: 30px;
-                    margin: 5px 0;
-                    background-color: rgba(209, 201, 201, 0.349);
-                    border: none;
-
-                    &:before {
-                        margin-left: 3px;
-                        font-family: "Font Awesome 5 Free";
-                        font-size: 0.6em;
-                        font-weight: 700;
-                        content: "\f07b";
-                    }
-
-                }
-
-                .square-style {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    // align-items: baseline;
-                    font-size: 0.3em;
-                    line-height: 20px;
-                    padding: 5px 10px;
-                    margin: 0 auto 5px auto;
-                    border-radius: 15px;
-                    position: relative;
-                    text-align: right;
-
-                    .subject {
-                        width: 25%;
-                        height: 100%;
-                        font-weight: bold;
-
-                        &:before {
-                            margin-left: 3px;
-                            font-family: "Font Awesome 5 Free";
-                            font-size: 0.4em;
-                            font-weight: 700;
-                            content: "\f02d";
-                        }
-                    }
-
-                    .teacher {
-                        font-size: 0.5em;
-                        width: 25%;
-                        height: 100%;
-                    }
-
-                    .time {
-                        direction: ltr;
-                        width: 25%;
-                        height: 100%;
-                        flex-grow: 2;
-
-                        &:after {
-                            margin-left: 2px;
-                            font-family: "Font Awesome 5 Free";
-                            font-size: 0.4em;
-                            font-weight: 700;
-                            content: "\f017";
-                        }
-                    }
-
-                    .remove-btn {
-                        width: 1.2em;
-                        height: 1.2em;
-                        margin: 2px;
-                        border-radius: 50%;
-                        position: relative;
-                        line-height: 0;
-                        right: 0;
-                        top: 0;
-
-                        &:before {
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            font-family: "Font Awesome 5 Free";
-                            font-size: 0.4em;
-                            font-weight: 700;
-                            content: "\f1f8";
-                        }
-                    }
-
-                    .edit {
-                        width: 1.2em;
-                        height: 1.2em;
-                        margin: 2px;
-                        border-radius: 50%;
-                        position: relative;
-
-                        &:before {
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            font-family: "Font Awesome 5 Free";
-                            font-size: 0.4em;
-                            font-weight: 700;
-                            content: "\f303";
-                        }
-                    }
-                }
-            }
-
-            :last-child {
-                border-top-left-radius: 6px;
-            }
-
-            :first-child {
-                border-top-right-radius: 6px;
             }
         }
     }
