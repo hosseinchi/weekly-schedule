@@ -2,15 +2,14 @@
 *,
 *::after,
 *::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: shabnam;
 }
 
 body {
-  background-color: #f3eded;
+  background-color: rgb(243, 237, 237);
 }
 
 ul {
@@ -31,114 +30,95 @@ button {
 }
 
 @font-face {
-  font-family: 'shabnam';
+  font-family: "shabnam";
   src: url("../fonts/Shabnam-FD.eot") format("eot");
   src: url("../fonts/Shabnam-FD.ttf") format("ttf");
   src: url("../fonts/Shabnam-FD.woff") format("woff");
 }
-
 .icon-button {
   display: inline-block;
   background-color: transparent;
 }
 
 .green-square {
-  background-color: #acd388;
+  background-color: rgb(172, 211, 136);
 }
 
 .blue-square {
-  background-color: #54bddd;
+  background-color: rgb(84, 189, 221);
 }
 
 .orange-square {
-  background-color: #e6b967;
+  background-color: rgb(230, 185, 103);
 }
 
 .purple-square {
-  background-color: #d48ac4;
+  background-color: rgb(212, 138, 196);
 }
 
 .calendar {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 60vw;
   padding: 10px 0;
   margin: 100px 500px 0 100px;
   border-radius: 15px;
 }
-
 .calendar .typeB {
   display: none;
 }
-
 .calendar .top-of-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
-
 .calendar .top-of-container .left-of-top {
   width: 50%;
 }
-
 .calendar .top-of-container .left-of-top #print {
   margin: 15px 0 0 10px;
 }
-
 .calendar .top-of-container .left-of-top #print:before {
   font-family: "Font Awesome 5 Free";
   font-size: 0.6em;
   font-weight: 700;
   content: "\f02f";
 }
-
 .calendar .top-of-container .left-of-top #remove-group {
   display: block;
   margin-left: 10px;
   color: red;
   direction: rtl;
 }
-
 .calendar .top-of-container .left-of-top #remove-group::after {
   content: "حذف گروهی";
   font-size: 0.6em;
   font-weight: 700;
   margin-right: 2px;
 }
-
 .calendar .top-of-container .left-of-top #remove-group:before {
   font-family: "Font Awesome 5 Free";
   font-size: 0.6em;
   font-weight: 700;
   content: "\f1f8";
 }
-
 .calendar .top-of-container .right-of-top {
   direction: rtl;
   width: 50%;
 }
-
 .calendar .top-of-container .right-of-top #title {
   direction: rtl;
   font-size: 0.6em;
   margin: 15px 10px 0 0;
   font-weight: bold;
 }
-
 .calendar .top-of-container .right-of-top #shows-calendar {
   margin-right: 10px;
 }
-
 .calendar .top-of-container .right-of-top #shows-calendar:before {
   font-family: "Font Awesome 5 Free";
   font-size: 0.7em;
   font-weight: 700;
   content: " \f00a";
 }
-
 .calendar .top-of-container .right-of-top #shows-calendar:after {
   content: "نمایش تقویمی";
   font-size: 0.7em;
@@ -146,19 +126,16 @@ button {
   letter-spacing: 0.4pt;
   margin-right: 2px;
 }
-
 .calendar .top-of-container .right-of-top #shows-list {
   margin-right: 5px;
   color: rgba(128, 128, 128, 0.644);
 }
-
 .calendar .top-of-container .right-of-top #shows-list:before {
   font-family: "Font Awesome 5 Free";
   font-size: 0.5em;
   font-weight: 700;
   content: " \f00b";
 }
-
 .calendar .top-of-container .right-of-top #shows-list:after {
   content: "نمایش لیستی";
   font-size: 0.5em;
@@ -166,140 +143,111 @@ button {
   letter-spacing: 0.4pt;
   margin-right: 2px;
 }
-
-.calendar .main-of-container #calendar-table {
-  direction: rtl;
-  width: 95%;
+.calendar .main-of-container {
   margin: auto;
-  border-radius: 4px;
-  border: 1px solid #b4b2b2;
-  font-size: 0.5em;
-  border-spacing: 0;
-  margin: 15px auto;
-  overflow: hidden;
+  width: 95%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
 }
-
-.calendar .main-of-container thead tr th {
-  padding: 10px 10px;
+.calendar .main-of-container ul {
+  font-size: 0.6em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
 }
-
-.calendar .main-of-container thead tr :last-child {
-  border-left: none;
+.calendar .main-of-container ul .daycounter {
+  flex-basis: 30px;
+  line-height: 30px;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  font-size: 1em;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+  margin: 0;
 }
-
-.calendar .main-of-container .square-style {
-  width: 70px;
+.calendar .main-of-container ul .square-style {
+  width: 70%;
   margin: 10px auto;
   padding: 5px;
-  border-radius: 3px;
+  border-radius: 6px;
   position: relative;
   text-align: center;
 }
-
-.calendar .main-of-container .subject {
+.calendar .main-of-container ul .square-style .subject {
   font-size: 1em;
   font-weight: bold;
 }
-
-.calendar .main-of-container .teacher {
+.calendar .main-of-container ul .square-style .teacher {
   font-size: 0.5em;
 }
-
-.calendar .main-of-container .time {
+.calendar .main-of-container ul .square-style .time {
   font-size: 0.5em;
 }
-
-.calendar .main-of-container .remove-btn {
-  width: 10px;
-  height: 10px;
+.calendar .main-of-container ul .square-style .remove-btn {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  line-height: 5px;
+  line-height: 6px;
   position: absolute;
   top: -2px;
   right: -2px;
 }
-
-.calendar .main-of-container .remove-btn:before {
+.calendar .main-of-container ul .square-style .remove-btn:before {
   font-family: "Font Awesome 5 Free";
   font-size: 8px;
   font-weight: 700;
   content: "\f00d";
 }
-
-.calendar .main-of-container tbody tr :last-child {
-  border-left: none;
+.calendar .main-of-container :last-child {
+  border-top-left-radius: 6px;
 }
-
-.calendar .main-of-container tbody tr td {
-  border-bottom: none;
-}
-
-.calendar .main-of-container td,
-.calendar .main-of-container th {
-  border-left: 1px solid #918e8e;
-  border-bottom: 1px solid #868686;
-  vertical-align: top;
-}
-
-.calendar .main-of-container td:nth-child(even),
-.calendar .main-of-container th:nth-child(even) {
-  background-color: rgba(204, 204, 204, 0.363);
+.calendar .main-of-container :first-child {
+  border-top-right-radius: 6px;
 }
 
 .list {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 60vw;
   padding: 10px 0;
   margin: 100px 500px 0 100px;
   border-radius: 15px;
 }
-
 .list .top-of-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
-
 .list .top-of-container .left-of-top {
   width: 50%;
 }
-
 .list .top-of-container .left-of-top #print {
   display: none;
 }
-
 .list .top-of-container .left-of-top #remove-group {
   display: none;
 }
-
 .list .top-of-container .right-of-top {
   direction: rtl;
   width: 50%;
 }
-
 .list .top-of-container .right-of-top #title {
   direction: rtl;
   font-size: 0.6em;
   margin: 15px 10px 0 0;
   font-weight: bold;
 }
-
 .list .top-of-container .right-of-top #shows-calendar {
   margin-right: 10px;
   color: rgba(128, 128, 128, 0.644);
 }
-
 .list .top-of-container .right-of-top #shows-calendar:before {
   font-family: "Font Awesome 5 Free";
   font-size: 0.5em;
   font-weight: 700;
   content: " \f00a";
 }
-
 .list .top-of-container .right-of-top #shows-calendar:after {
   content: "نمایش تقویمی";
   font-size: 0.5em;
@@ -307,18 +255,15 @@ button {
   letter-spacing: 0.4pt;
   margin-right: 2px;
 }
-
 .list .top-of-container .right-of-top #shows-list {
   margin-right: 5px;
 }
-
 .list .top-of-container .right-of-top #shows-list:before {
   font-family: "Font Awesome 5 Free";
   font-size: 0.7em;
   font-weight: 700;
   content: " \f00b";
 }
-
 .list .top-of-container .right-of-top #shows-list:after {
   content: "نمایش لیستی";
   font-size: 0.7em;
@@ -326,17 +271,17 @@ button {
   letter-spacing: 0.4pt;
   margin-right: 2px;
 }
-
-.list .main-of-container #calendar-table {
-  display: none;
+.list .main-of-container {
+  display: flex;
+  flex-direction: column;
 }
-
 .list .main-of-container ul {
+  display: block;
+  border: none;
   direction: rtl;
   padding: 8px;
 }
-
-.list .main-of-container ul .onDay {
+.list .main-of-container ul .daycounter {
   width: 10%;
   font-size: 0.6em;
   background-color: rgba(209, 201, 201, 0.349);
@@ -344,37 +289,31 @@ button {
   border-radius: 8px;
   margin-bottom: 5px;
 }
-
-.list .main-of-container ul .onDay:before {
+.list .main-of-container ul .daycounter:before {
   margin-left: 3px;
   font-family: "Font Awesome 5 Free";
   font-size: 0.6em;
   font-weight: 700;
   content: "\f07b";
 }
-
+.list .main-of-container ul .daycounter::after {
+  display: none;
+}
 .list .main-of-container ul .row-style {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   font-size: 0.3em;
   line-height: 20px;
   padding: 5px 10px;
   margin-bottom: 5px;
   border-radius: 15px;
 }
-
 .list .main-of-container ul .row-style .subject {
   width: 25%;
   height: 100%;
   font-weight: bold;
 }
-
 .list .main-of-container ul .row-style .subject:before {
   margin-left: 3px;
   font-family: "Font Awesome 5 Free";
@@ -382,21 +321,16 @@ button {
   font-weight: 700;
   content: "\f02d";
 }
-
 .list .main-of-container ul .row-style .teacher {
   width: 25%;
   height: 100%;
 }
-
 .list .main-of-container ul .row-style .time {
   direction: ltr;
   width: 25%;
   height: 100%;
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
+  flex-grow: 2;
 }
-
 .list .main-of-container ul .row-style .time:after {
   margin-left: 2px;
   font-family: "Font Awesome 5 Free";
@@ -404,7 +338,6 @@ button {
   font-weight: 700;
   content: "\f017";
 }
-
 .list .main-of-container ul .row-style .remove-btn {
   width: 1.2em;
   height: 1.2em;
@@ -412,19 +345,16 @@ button {
   border-radius: 50%;
   position: relative;
 }
-
 .list .main-of-container ul .row-style .remove-btn:before {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   font-family: "Font Awesome 5 Free";
   font-size: 0.4em;
   font-weight: 700;
   content: "\f1f8";
 }
-
 .list .main-of-container ul .row-style .edit {
   width: 1.2em;
   height: 1.2em;
@@ -432,16 +362,188 @@ button {
   border-radius: 50%;
   position: relative;
 }
-
 .list .main-of-container ul .row-style .edit:before {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   font-family: "Font Awesome 5 Free";
   font-size: 0.4em;
   font-weight: 700;
   content: "\f303";
 }
-/*# sourceMappingURL=main.css.map */
+
+@media only screen and (max-width: 800px) {
+  .calendar {
+    background-color: rgb(255, 255, 255);
+    width: 60vw;
+    padding: 10px 0;
+    margin: 100px 500px 0 100px;
+    border-radius: 15px;
+  }
+  .calendar .typeB {
+    display: none;
+  }
+  .calendar .top-of-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .calendar .top-of-container .left-of-top {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .calendar .top-of-container .left-of-top #print {
+    display: none;
+  }
+  .calendar .top-of-container .left-of-top #remove-group {
+    display: block;
+    margin-left: 10px;
+    color: red;
+    direction: rtl;
+  }
+  .calendar .top-of-container .left-of-top #remove-group::after {
+    content: "حذف گروهی";
+    font-size: 0.6em;
+    font-weight: 700;
+    margin-right: 2px;
+  }
+  .calendar .top-of-container .left-of-top #remove-group:before {
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.6em;
+    font-weight: 700;
+    content: "\f1f8";
+  }
+  .calendar .top-of-container .right-of-top {
+    direction: rtl;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .calendar .top-of-container .right-of-top #title {
+    direction: rtl;
+    font-size: 0.6em;
+    margin: 15px 10px 10px 0;
+    font-weight: bold;
+  }
+  .calendar .top-of-container .right-of-top #shows-calendar {
+    display: none;
+  }
+  .calendar .top-of-container .right-of-top #shows-list {
+    display: none;
+  }
+  .calendar .main-of-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .calendar .main-of-container ul {
+    font-size: 0.6em;
+    display: block;
+    border: none;
+    direction: rtl;
+    padding: 8px;
+  }
+  .calendar .main-of-container ul .daycounter {
+    width: 13%;
+    text-align: center;
+    border-radius: 15px;
+    line-height: 30px;
+    margin: 5px 0;
+    background-color: rgba(209, 201, 201, 0.349);
+    border: none;
+  }
+  .calendar .main-of-container ul .daycounter:before {
+    margin-left: 3px;
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.6em;
+    font-weight: 700;
+    content: "\f07b";
+  }
+  .calendar .main-of-container ul .square-style {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 0.3em;
+    line-height: 20px;
+    padding: 5px 10px;
+    margin: 0 auto 5px auto;
+    border-radius: 15px;
+    position: relative;
+    text-align: right;
+  }
+  .calendar .main-of-container ul .square-style .subject {
+    width: 25%;
+    height: 100%;
+    font-weight: bold;
+  }
+  .calendar .main-of-container ul .square-style .subject:before {
+    margin-left: 3px;
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.4em;
+    font-weight: 700;
+    content: "\f02d";
+  }
+  .calendar .main-of-container ul .square-style .teacher {
+    font-size: 0.5em;
+    width: 25%;
+    height: 100%;
+  }
+  .calendar .main-of-container ul .square-style .time {
+    direction: ltr;
+    width: 25%;
+    height: 100%;
+    flex-grow: 2;
+  }
+  .calendar .main-of-container ul .square-style .time:after {
+    margin-left: 2px;
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.4em;
+    font-weight: 700;
+    content: "\f017";
+  }
+  .calendar .main-of-container ul .square-style .remove-btn {
+    width: 1.2em;
+    height: 1.2em;
+    margin: 2px;
+    border-radius: 50%;
+    position: relative;
+    line-height: 0;
+    right: 0;
+    top: 0;
+  }
+  .calendar .main-of-container ul .square-style .remove-btn:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.4em;
+    font-weight: 700;
+    content: "\f1f8";
+  }
+  .calendar .main-of-container ul .square-style .edit {
+    width: 1.2em;
+    height: 1.2em;
+    margin: 2px;
+    border-radius: 50%;
+    position: relative;
+  }
+  .calendar .main-of-container ul .square-style .edit:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.4em;
+    font-weight: 700;
+    content: "\f303";
+  }
+  .calendar .main-of-container :last-child {
+    border-top-left-radius: 6px;
+  }
+  .calendar .main-of-container :first-child {
+    border-top-right-radius: 6px;
+  }
+}/*# sourceMappingURL=main.css.map */
