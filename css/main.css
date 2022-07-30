@@ -63,9 +63,6 @@ button {
   margin: 100px 500px 0 100px;
   border-radius: 15px;
 }
-.calendar .typeB {
-  display: none;
-}
 .calendar .top-of-container {
   display: flex;
   flex-direction: row;
@@ -143,71 +140,69 @@ button {
   letter-spacing: 0.4pt;
   margin-right: 2px;
 }
-.calendar .main-of-container #calendar-table {
-  direction: rtl;
-  width: 95%;
+.calendar .main-of-container {
   margin: auto;
-  border-radius: 4px;
-  border: 1px solid rgb(180, 178, 178);
-  font-size: 0.5em;
-  border-spacing: 0;
-  margin: 15px auto;
-  overflow: hidden;
+  width: 95%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
 }
-.calendar .main-of-container thead tr th {
-  padding: 10px 10px;
+.calendar .main-of-container ul {
+  font-size: 0.6em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
 }
-.calendar .main-of-container thead tr :last-child {
-  border-left: none;
+.calendar .main-of-container ul .daycounter {
+  flex-basis: 30px;
+  line-height: 30px;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  font-size: 1em;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+  margin: 0;
 }
-.calendar .main-of-container .square-style {
-  width: 70px;
+.calendar .main-of-container ul .square-style {
+  width: 70%;
   margin: 10px auto;
   padding: 5px;
-  border-radius: 3px;
+  border-radius: 6px;
   position: relative;
   text-align: center;
 }
-.calendar .main-of-container .subject {
+.calendar .main-of-container ul .square-style .subject {
   font-size: 1em;
   font-weight: bold;
 }
-.calendar .main-of-container .teacher {
+.calendar .main-of-container ul .square-style .teacher {
   font-size: 0.5em;
 }
-.calendar .main-of-container .time {
+.calendar .main-of-container ul .square-style .time {
   font-size: 0.5em;
 }
-.calendar .main-of-container .remove-btn {
-  width: 10px;
-  height: 10px;
+.calendar .main-of-container ul .square-style .remove-btn {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  line-height: 5px;
+  line-height: 6px;
   position: absolute;
   top: -2px;
   right: -2px;
 }
-.calendar .main-of-container .remove-btn:before {
+.calendar .main-of-container ul .square-style .remove-btn:before {
   font-family: "Font Awesome 5 Free";
   font-size: 8px;
   font-weight: 700;
   content: "\f00d";
 }
-.calendar .main-of-container tbody tr :last-child {
-  border-left: none;
+.calendar .main-of-container :last-child {
+  border-top-left-radius: 6px;
 }
-.calendar .main-of-container tbody tr td {
-  border-bottom: none;
-}
-.calendar .main-of-container td,
-.calendar .main-of-container th {
-  border-left: 1px solid rgb(145, 142, 142);
-  border-bottom: 1px solid rgb(134, 134, 134);
-  vertical-align: top;
-}
-.calendar .main-of-container td:nth-child(even),
-.calendar .main-of-container th:nth-child(even) {
-  background-color: rgba(204, 204, 204, 0.363);
+.calendar .main-of-container :first-child {
+  border-top-right-radius: 6px;
 }
 
 .list {
@@ -273,10 +268,14 @@ button {
   letter-spacing: 0.4pt;
   margin-right: 2px;
 }
-.list .main-of-container #calendar-table {
-  display: none;
+.list .main-of-container {
+  display: flex;
+  flex-direction: column;
 }
 .list .main-of-container ul {
+  font-size: 0.6em;
+  display: block;
+  border: none;
   direction: rtl;
   padding: 8px;
 }
@@ -296,53 +295,59 @@ button {
   font-weight: 700;
   content: "\f07b";
 }
-.list .main-of-container ul .row-style {
+.list .main-of-container ul .square-style {
   width: 100%;
   display: flex;
   flex-direction: row;
   font-size: 0.3em;
   line-height: 20px;
   padding: 5px 10px;
-  margin-bottom: 5px;
+  margin: 0 auto 5px auto;
   border-radius: 15px;
+  position: relative;
+  text-align: right;
 }
-.list .main-of-container ul .row-style .subject {
+.list .main-of-container ul .square-style .subject {
   width: 25%;
   height: 100%;
   font-weight: bold;
 }
-.list .main-of-container ul .row-style .subject:before {
+.list .main-of-container ul .square-style .subject:before {
   margin-left: 3px;
   font-family: "Font Awesome 5 Free";
   font-size: 0.4em;
   font-weight: 700;
   content: "\f02d";
 }
-.list .main-of-container ul .row-style .teacher {
+.list .main-of-container ul .square-style .teacher {
+  font-size: 0.5em;
   width: 25%;
   height: 100%;
 }
-.list .main-of-container ul .row-style .time {
+.list .main-of-container ul .square-style .time {
   direction: ltr;
   width: 25%;
   height: 100%;
   flex-grow: 2;
 }
-.list .main-of-container ul .row-style .time:after {
+.list .main-of-container ul .square-style .time:after {
   margin-left: 2px;
   font-family: "Font Awesome 5 Free";
   font-size: 0.4em;
   font-weight: 700;
   content: "\f017";
 }
-.list .main-of-container ul .row-style .remove-btn {
+.list .main-of-container ul .square-style .remove-btn {
   width: 1.2em;
   height: 1.2em;
   margin: 2px;
   border-radius: 50%;
   position: relative;
+  line-height: 0;
+  right: 0;
+  top: 0;
 }
-.list .main-of-container ul .row-style .remove-btn:before {
+.list .main-of-container ul .square-style .remove-btn:before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -352,14 +357,14 @@ button {
   font-weight: 700;
   content: "\f1f8";
 }
-.list .main-of-container ul .row-style .edit {
+.list .main-of-container ul .square-style .edit {
   width: 1.2em;
   height: 1.2em;
   margin: 2px;
   border-radius: 50%;
   position: relative;
 }
-.list .main-of-container ul .row-style .edit:before {
+.list .main-of-container ul .square-style .edit:before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -368,4 +373,170 @@ button {
   font-size: 0.4em;
   font-weight: 700;
   content: "\f303";
+}
+
+@media only screen and (max-width: 800px) {
+  .calendar {
+    background-color: rgb(255, 255, 255);
+    width: 60vw;
+    padding: 10px 0;
+    margin: 100px 500px 0 100px;
+    border-radius: 15px;
+  }
+  .calendar .top-of-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .calendar .top-of-container .left-of-top {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .calendar .top-of-container .left-of-top #print {
+    display: none;
+  }
+  .calendar .top-of-container .left-of-top #remove-group {
+    display: block;
+    margin-left: 10px;
+    color: red;
+    direction: rtl;
+  }
+  .calendar .top-of-container .left-of-top #remove-group::after {
+    content: "حذف گروهی";
+    font-size: 0.6em;
+    font-weight: 700;
+    margin-right: 2px;
+  }
+  .calendar .top-of-container .left-of-top #remove-group:before {
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.6em;
+    font-weight: 700;
+    content: "\f1f8";
+  }
+  .calendar .top-of-container .right-of-top {
+    direction: rtl;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .calendar .top-of-container .right-of-top #title {
+    direction: rtl;
+    font-size: 0.6em;
+    margin: 15px 10px 10px 0;
+    font-weight: bold;
+  }
+  .calendar .top-of-container .right-of-top #shows-calendar {
+    display: none;
+  }
+  .calendar .top-of-container .right-of-top #shows-list {
+    display: none;
+  }
+  .calendar .main-of-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .calendar .main-of-container ul {
+    font-size: 0.6em;
+    display: block;
+    border: none;
+    direction: rtl;
+    padding: 8px;
+  }
+  .calendar .main-of-container ul .daycounter {
+    width: 13%;
+    text-align: center;
+    border-radius: 15px;
+    line-height: 30px;
+    margin: 5px 0;
+    background-color: rgba(209, 201, 201, 0.349);
+    border: none;
+  }
+  .calendar .main-of-container ul .daycounter:before {
+    margin-left: 3px;
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.6em;
+    font-weight: 700;
+    content: "\f07b";
+  }
+  .calendar .main-of-container ul .square-style {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 0.3em;
+    line-height: 20px;
+    padding: 5px 10px;
+    margin: 0 auto 5px auto;
+    border-radius: 15px;
+    position: relative;
+    text-align: right;
+  }
+  .calendar .main-of-container ul .square-style .subject {
+    width: 25%;
+    height: 100%;
+    font-weight: bold;
+  }
+  .calendar .main-of-container ul .square-style .subject:before {
+    margin-left: 3px;
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.4em;
+    font-weight: 700;
+    content: "\f02d";
+  }
+  .calendar .main-of-container ul .square-style .teacher {
+    font-size: 0.5em;
+    width: 25%;
+    height: 100%;
+  }
+  .calendar .main-of-container ul .square-style .time {
+    direction: ltr;
+    width: 25%;
+    height: 100%;
+    flex-grow: 2;
+  }
+  .calendar .main-of-container ul .square-style .time:after {
+    margin-left: 2px;
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.4em;
+    font-weight: 700;
+    content: "\f017";
+  }
+  .calendar .main-of-container ul .square-style .remove-btn {
+    width: 1.2em;
+    height: 1.2em;
+    margin: 2px;
+    border-radius: 50%;
+    position: relative;
+    line-height: 0;
+    right: 0;
+    top: 0;
+  }
+  .calendar .main-of-container ul .square-style .remove-btn:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.4em;
+    font-weight: 700;
+    content: "\f1f8";
+  }
+  .calendar .main-of-container ul .square-style .edit {
+    width: 1.2em;
+    height: 1.2em;
+    margin: 2px;
+    border-radius: 50%;
+    position: relative;
+  }
+  .calendar .main-of-container ul .square-style .edit:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.4em;
+    font-weight: 700;
+    content: "\f303";
+  }
 }/*# sourceMappingURL=main.css.map */
